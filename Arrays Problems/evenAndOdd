@@ -1,0 +1,24 @@
+void reArrange(int arr[], int N) {
+        
+        int i = 0;
+        int j = 1;
+        
+        while(i<=N&&j<=N){
+            
+            while(arr[i]%2==0){
+                i+=2;
+            }
+            
+            while(arr[j]%2==1){
+                j+=2;
+            }
+            
+            if(i<=N&&j<=N){
+                swap(arr[i], arr[j]);
+                i+=2;
+                j+=2;
+            }
+            
+        }
+        
+    }
