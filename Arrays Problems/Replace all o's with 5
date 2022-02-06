@@ -1,0 +1,20 @@
+int convertFive(int n) {
+    
+    int rem = 0;
+    int sum = 0;
+    int i = 0;
+    
+    while(n!=0){
+        
+        rem = n%10;
+        if(rem == 0){
+            rem = 5;
+        }
+        sum = (rem*pow(10,i)) + sum;
+        n=n/10;
+        i++;
+    }
+    
+    return sum;
+    
+}
