@@ -1,0 +1,25 @@
+int minNumber(int arr[], int low, int high)
+{
+    
+    int mid = low + (high - low)/2;
+    int ans = -1;
+    
+    if(arr[low]<arr[high]){
+        return arr[low];
+    }
+    
+      while(low < high){
+
+        if(arr[mid] >= arr[0]){
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+
+        mid = low + (high - low)/2;
+
+    }
+    
+    return arr[high];
+    
+}
