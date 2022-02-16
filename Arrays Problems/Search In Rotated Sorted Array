@@ -1,0 +1,56 @@
+int findPivot(vector<int> vec){
+    
+    int s = 0;
+    int e = vec.size()-1;
+    
+    int mid = s + (e-s)/2;
+    int pivot = 0;
+    
+    while(s<e){
+        
+        if(vec[mid] >= vec[0]){
+            s = mid + 1;
+        } else if(vec[mid] < vec[0]){
+            e = mid;
+        }
+        
+        mid = s + (e-s)/2;
+        
+    }
+    
+    return s;
+    
+}
+
+int findElement(vector<int> vec, int s, int e, int K){
+    
+    for(int i=s;i<=e;i++){
+        if(vec[i] == K){
+            return i;
+        }
+    }
+    
+    return -1;
+    
+}
+
+int Search(vector<int> vec, int K) {
+    
+    int s = 0;
+    int e = 0;
+    int n = vec.size();
+    int ele = 0;
+    int pivot = findPivot(vec);
+    
+    if(K > vec[n-1]){
+        e = pivot - 1;
+        ele = findElement(vec, s, e, K);
+    } else {
+        s = pivot;
+        e = vec.size()-1;
+        ele = findElement(vec, s, e, K);
+    }
+    
+    return ele;
+    
+}
