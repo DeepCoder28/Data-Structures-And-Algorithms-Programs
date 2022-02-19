@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+// bool isPalindrome(char string[], int size){
+
+//     int s = 0;
+//     int e = size - 1;
+
+//     while(s<=e){
+
+//         if(string[s] != string[e]){
+//             return 0;
+//         } else {
+//             s++;
+//             e--;
+//         }
+
+//     }
+
+//     return 1;
+
+// }
+
+int charToNum(char ch){
+    return ch - '0';
+}
+
+//Function to convert character to lowercase
+int toLowercase(char ch){
+
+    if(ch >= 'a' && ch <= 'z'){
+        return ch;
+    } else if(ch >='0' && ch <= '9'){
+        return charToNum(ch);
+    } else {
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+
+}
+
+//Check palindrome and consider that the given string is not case sensitive
+//Ignore white spaces and symbols if it is present is the string array
+
+bool isPalindrome(char string[], int n){
+
+    int s = 0;
+    int e = n-1;
+
+    while(s <= e){
+
+        if(toLowercase(string[s]) != toLowercase(string[e])){
+            return 0;
+        } else {
+            s++;
+            e--;
+        }
+    }
+        
+    return 1;
+
+}
+
+int main(){
+
+    char string[10] = {'2','1', '1', 'A'};
+
+    if(isPalindrome(string, 4)){
+        cout<<"YES";
+    } else{
+        cout<<"NO";
+    }
+
+    return 0;
+}
