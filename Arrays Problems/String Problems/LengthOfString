@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+int getLength(char name[]){
+
+    int count = 0;
+
+    for(int i=0;name[i]!='\0';i++){
+        count++;
+    }
+
+    return count;
+
+}
+
+int main(){
+
+    char name[10] = {'D', 'E', 'E', 'P', 'A', 'K', '\0'};
+
+    int length = getLength(name);
+
+    cout<<"Length of a string is "<<length;
+
+}
